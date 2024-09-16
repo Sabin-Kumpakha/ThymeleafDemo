@@ -3,20 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Thymeleaf App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        body{
+        nav{
             background-color: antiquewhite;
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 50px;
+            padding: 20px;
+            color: black;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        div{
+        .nav-icons a{
+            color: black;
+            font-size: 20px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .content{
             display: inline-block;
             position: relative;
             animation: move 12s linear infinite;
             color: orangered;
             font-weight: bold;
             padding: 100px;
+        }
+        .content2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            font-size: 16px;
+            color: cadetblue;
+            font-weight: bold;
         }
         @keyframes move{
             0% {
@@ -45,12 +67,28 @@
     </style>
 </head>
 <body>
-    <header>Online Academy</header>
+    <header>
+        <nav>
+            <div>ThymeLeaf Academy</div>
+            <div class="nav-icons">
+                <a href="www.envelopes.com" class="fa fa-envelope"></a>
+                <a href="www.github.com" class="fa fa-github"></a>
+                <a href="www.instagram.com" class="fa fa-instagram"></a>
+                <a href="www.linked.com" class="fa fa-linkedin"></a>
+                <a href="www.twitter.com" class="fa fa-twitter"></a>
+            </div>
+        </nav>
+    </header>
     <div class="content">
-    <h1>
-    <span th:text="${message}" class="letter"></span>
-    </h1>
+        <h1>
+            <span th:text="${message}" class="letter"></span>
+        </h1>
     </div>
-    <footer>© Sabin Kumpakha 2024</footer>
+    <div class="content2">
+        <h1 th:text="${greeting}"></h1>
+    </div>
+    <footer>
+        <p>© Sabin Kumpakha 2024</p>
+    </footer>
 </body>
 </html>
